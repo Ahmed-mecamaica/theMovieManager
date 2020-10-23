@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -91,10 +91,14 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="zql-tb-9hr">
+                                <rect key="frame" x="177.5" y="466" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0078431372550000003" green="0.70196078429999997" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="n8z-V4-qAW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1fh-L0-IaP"/>
+                            <constraint firstItem="zql-tb-9hr" firstAttribute="top" secondItem="6au-LF-Utu" secondAttribute="bottom" constant="8" id="25I-8H-8Rv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SyQ-Nw-CjV" secondAttribute="trailing" constant="16" id="7SU-r4-6O4"/>
                             <constraint firstItem="6au-LF-Utu" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="8fB-qK-K9k"/>
                             <constraint firstItem="SyQ-Nw-CjV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BUC-Z8-Xca"/>
@@ -103,6 +107,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9EU-Nu-cBG" secondAttribute="trailing" constant="16" id="YMD-so-pgt"/>
                             <constraint firstItem="9EU-Nu-cBG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="aMw-l6-3rG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6au-LF-Utu" secondAttribute="trailing" constant="16" id="c34-4Z-ddZ"/>
+                            <constraint firstItem="zql-tb-9hr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kFI-wr-t5h"/>
                             <constraint firstItem="SyQ-Nw-CjV" firstAttribute="top" secondItem="n8z-V4-qAW" secondAttribute="bottom" constant="8" id="l3s-Le-IHY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9EU-Nu-cBG" secondAttribute="bottom" constant="20" id="uUC-ZZ-la3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="n8z-V4-qAW" secondAttribute="trailing" constant="16" id="yv3-3r-PNZ"/>
@@ -110,6 +115,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="zql-tb-9hr" id="Hiv-Qc-NG0"/>
                         <outlet property="emailTextField" destination="qrT-hl-seK" id="kNU-Rr-pdO"/>
                         <outlet property="loginButton" destination="XfA-1k-xWc" id="gzO-wf-ODd"/>
                         <outlet property="loginViaWebsiteButton" destination="OHw-m7-7gh" id="Ghg-Tm-X1E"/>

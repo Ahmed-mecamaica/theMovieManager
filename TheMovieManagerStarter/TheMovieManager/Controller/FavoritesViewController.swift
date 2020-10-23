@@ -17,6 +17,11 @@ class FavoritesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        TMDBClient.getFavorites { (movie, error) in
+            MovieModel.favorites = movie
+            self.tableView.reloadData()
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +55,16 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
         let movie = MovieModel.favorites[indexPath.row]
         
         cell.textLabel?.text = movie.title
+        cell.imageView?.image = UIImage(named: "PosterPlaceholder")
+        if let posterPath = movie.posterPath {
+            TMDBClient.downloadPosterImage(path: posterPath) { (data, error) in
+                guard let data = data else {
+                    return
+                }
+                cell.imageView?.image = UIImage(data: data)
+                cell.setNeedsLayout()
+            }
+        }
         
         return cell
     }
